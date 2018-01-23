@@ -2,12 +2,12 @@
   <ion-content padding="true" class="has-header">
     <form id="muetDictionary-form1" class="list">
       <label class="item item-input" id="muetDictionary-input3" name="txtBoxSearch">
-        <input type="text" ng-change="searching()" ng-model="searchString" ng-keydown="changecursor($event)" placeholder="Search Your Word Here">
+	  
+        <input type="text" ng-model="searchString" ng-change="searching()" placeholder="Search Your Word Here">
 		
-		<select id="select" ng-style="vis" ng-model="txt" ng-click="copy($event)" ng-keypress="copy($event)" ng-keydown="changecursor($event)” multiple>
-<option ng-repeat="i in items | filtersearch:searchString">{{i.string}}</option>
-</select >
       </label>
+	  <button id="home-button7" class="button button-positive button-block icon ion-android-search" ng-click="fnSearch()">Search</button>
     </form>
+	
   </ion-content>
 </ion-view>
