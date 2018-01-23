@@ -2,7 +2,11 @@
   <ion-content padding="true" class="has-header">
     <form id="muetDictionary-form1" class="list">
       <label class="item item-input" id="muetDictionary-input3" name="txtBoxSearch">
-        <input type="text" ng-change="fnWohaa(txtSearch)" ng-model="txtSearch" placeholder="Search Your Word Here">
+        <input type="text" ng-change="searching()" ng-model="searchString" ng-keydown="changecursor($event)" placeholder="Search Your Word Here">
+		
+		<select id="select" ng-style="vis" ng-model="txt" ng-click="copy($event)" ng-keypress="copy($event)" ng-keydown="changecursor($event)” multiple>
+<option ng-repeat="i in items | filtersearch:searchString">{{i.string}}</option>
+</select >
       </label>
     </form>
   </ion-content>
