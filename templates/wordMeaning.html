@@ -1,3 +1,26 @@
 <ion-view title="Word Meaning" id="page2">
-  <ion-content padding="true" class="has-header"></ion-content>
+  <ion-content padding="true" class="has-header">
+    <ion-list id="wordMeaning-list2">
+      <div class="item item-body" id="wordMeaning-list-item-container1">
+        <div id="wordMeaning-markdown2" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">
+            <strong><input type="text" readonly ng-model="txtboxWord" value="......"></strong>
+          </p>
+		  
+        </div>
+      </div>
+      <ion-item class="item-divider" id="wordMeaning-list-item-divider1"><strong> Meaning:</strong>
+	  <div class="spacer" style="width: 300px; height: 18px;">
+		<input type="text" readonly ng-model="txtboxMeaning" value="">
+	  </div>
+	  </ion-item>
+      <ion-item class="item-divider" id="wordMeaning-list-item-divider1"><strong> Sentence:</strong>
+	  <div class="spacer" style="width: 300px; height: 18px;">
+		<textarea style="width: 300px; height: 100px;" id="txtAreaSentence" ng-model="txtAreaSentence">
+		
+		</textarea>
+	  </div>
+	  </ion-item>
+    </ion-list>
+   
 </ion-view>

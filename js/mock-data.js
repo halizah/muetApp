@@ -1,443 +1,461 @@
-﻿var MOCK_CSS_COLORS = [
+﻿var MOCK_DATA = [
   {
     "name": "ABLE",
-    "code": "#faebd7"
+    "definition": "having the skill",
+	"definitionBM": "boleh",
+	"sentenceEng": "A good student must be able to communicate effectively.",
+	"sentenceBM":"Seorang pelajar yang baik mestilah boleh berkomunikasi dengan berkesan."
   },
   {
     "name": "ACCORDING (TO)",
-    "code": "#00ffff"
+    "definition": "as stated by something or someone",
+	"definitionBM": "menurut",
+	"sentenceEng": "According to the speaker, there are a few ways to improve English in Malaysia.",
+	"sentenceBM":"Menurut penceramah itu, terdapat beberapa cara untuk menambahbaik Bahasa Inggeris di Malaysia."
   },
   {
     "name": "ACTIVITIES, ACTIVITY",
-    "code": "#7fffd4"
+    "definition": "things that people do",
+	"definitionBM": "aktiviti",
+	"sentenceEng": "Your school decides to organize  activities  to raise fund for flood victims.",
+	"sentenceBM":"Sekolah anda bercadang untuk menganjurkan beberapa aktiviti untuk mengumpul dana bagi mangsa banjir."
   },
   {
     "name": "ADAPTED (FROM)",
-    "code": "#f5f5dc"
+    "definition": "(make suitable) of something or someone",
+	"definitionBM": "diadaptasikan, disesuaikan",
+	"sentenceEng": "The passage in Section C is adapted from the news.",
+	"sentenceBM":"Petikan di Seksyen C telah diadaptasi daripada sebuah berita."
   },
   {
     "name": "ADVISED (ppt of ADVISE)",
-    "code": "#ffe4c4"
+    "definition": "counsel",
+	"definitionBM": "having the skill",
+	"sentenceEng": "",
+	"sentenceBM":""
   },
   {
     "name": "AGE",
-    "code": "#000000"
+    "definition": "number of years a person has lived",
+	"definitionBM": "having the skill",
+	"sentenceEng": "",
+	"sentenceBM":""
   },
   {
     "name": "ALL",
-    "code": "#ffebcd"
+    "definition": "#ffebcd"
   },
   {
     "name": "ALSO",
-    "code": "#0000ff"
+    "definition": "#0000ff"
   },
   {
     "name": "ANSWER",
-    "code": "#8a2be2"
+    "definition": "#8a2be2"
   },
   {
     "name": "AREAS, AREA",
-    "code": "#a52a2a"
+    "definition": "#a52a2a"
   },
   {
     "name": "BASED (ppt of BASE)",
-    "code": "#deb887"
+    "definition": "#deb887"
   },
   {
     "name": "CADETBLUE",
-    "code": "#5f9ea0"
+    "definition": "#5f9ea0"
   },
   {
     "name": "CHARTREUSE",
-    "code": "#7fff00"
+    "definition": "#7fff00"
   },
   {
     "name": "CHOCOLATE",
-    "code": "#d2691e"
+    "definition": "#d2691e"
   },
   {
     "name": "CORAL",
-    "code": "#ff7f50"
+    "definition": "#ff7f50"
   },
   {
     "name": "CORNSILK",
-    "code": "#fff8dc"
+    "definition": "#fff8dc"
   },
   {
     "name": "CRIMSON",
-    "code": "#dc143c"
+    "definition": "#dc143c"
   },
   {
     "name": "CYAN",
-    "code": "#00ffff"
+    "definition": "#00ffff"
   },
   {
     "name": "DARKBLUE",
-    "code": "#00008b"
+    "definition": "#00008b"
   },
   {
     "name": "DARKCYAN",
-    "code": "#008b8b"
+    "definition": "#008b8b"
   },
   {
     "name": "DARKGRAY",
-    "code": "#a9a9a9"
+    "definition": "#a9a9a9"
   },
   {
     "name": "DARKGREEN",
-    "code": "#006400"
+    "definition": "#006400"
   },
   {
     "name": "DARKGREY",
-    "code": "#a9a9a9"
+    "definition": "#a9a9a9"
   },
   {
     "name": "DARKKHAKI",
-    "code": "#bdb76b"
+    "definition": "#bdb76b"
   },
   {
     "name": "DARKRED",
-    "code": "#8b0000"
+    "definition": "#8b0000"
   },
   {
     "name": "DARKVIOLET",
-    "code": "#9400d3"
+    "definition": "#9400d3"
   },
   {
     "name": "DEEPPINK",
-    "code": "#ff1493"
+    "definition": "#ff1493"
   },
   {
     "name": "DEEPSKYBLUE",
-    "code": "#00bfff"
+    "definition": "#00bfff"
   },
   {
     "name": "DIMGRAY",
-    "code": "#696969"
+    "definition": "#696969"
   },
   {
     "name": "DIMGREY",
-    "code": "#696969"
+    "definition": "#696969"
   },
   {
     "name": "DODGERBLUE",
-    "code": "#1e90ff"
+    "definition": "#1e90ff"
   },
   {
     "name": "FIREBRICK",
-    "code": "#b22222"
+    "definition": "#b22222"
   },
   {
     "name": "FLORALWHITE",
-    "code": "#fffaf0"
+    "definition": "#fffaf0"
   },
   {
     "name": "FORESTGREEN",
-    "code": "#228b22"
+    "definition": "#228b22"
   },
   {
     "name": "FUCHSIA",
-    "code": "#ff00ff"
+    "definition": "#ff00ff"
   },
   {
     "name": "GAINSBORO",
-    "code": "#dcdcdc"
+    "definition": "#dcdcdc"
   },
   {
     "name": "GHOSTWHITE",
-    "code": "#f8f8ff"
+    "definition": "#f8f8ff"
   },
   {
     "name": "GOLD",
-    "code": "#ffd700"
+    "definition": "#ffd700"
   },
   {
     "name": "GOLDENROD",
-    "code": "#daa520"
+    "definition": "#daa520"
   },
   {
     "name": "GRAY",
-    "code": "#808080"
+    "definition": "#808080"
   },
   {
     "name": "GREEN",
-    "code": "#008000"
+    "definition": "#008000"
   },
   {
     "name": "GREENYELLOW",
-    "code": "#adff2f"
+    "definition": "#adff2f"
   },
   {
     "name": "GREY",
-    "code": "#808080"
+    "definition": "#808080"
   },
   {
     "name": "HONEYDEW",
-    "code": "#f0fff0"
+    "definition": "#f0fff0"
   },
   {
     "name": "HOTPINK",
-    "code": "#ff69b4"
+    "definition": "#ff69b4"
   },
   {
     "name": "INDIANRED",
-    "code": "#cd5c5c"
+    "definition": "#cd5c5c"
   },
   {
     "name": "INDIGO",
-    "code": "#4b0082"
+    "definition": "#4b0082"
   },
   {
     "name": "IVORY",
-    "code": "#fffff0"
+    "definition": "#fffff0"
   },
   {
     "name": "KHAKI",
-    "code": "#f0e68c"
+    "definition": "#f0e68c"
   },
   {
     "name": "LAVENDER",
-    "code": "#e6e6fa"
+    "definition": "#e6e6fa"
   },
   {
     "name": "LAWNGREEN",
-    "code": "#7cfc00"
+    "definition": "#7cfc00"
   },
   {
     "name": "LIGHTBLUE",
-    "code": "#add8e6"
+    "definition": "#add8e6"
   },
   {
     "name": "LIGHTCORAL",
-    "code": "#f08080"
+    "definition": "#f08080"
   },
   {
     "name": "LIGHTCYAN",
-    "code": "#e0ffff"
+    "definition": "#e0ffff"
   },
   {
     "name": "LIGHTGRAY",
-    "code": "#d3d3d3"
+    "definition": "#d3d3d3"
   },
   {
     "name": "LIGHTGREEN",
-    "code": "#90ee90"
+    "definition": "#90ee90"
   },
   {
     "name": "LIGHTGREY",
-    "code": "#d3d3d3"
+    "definition": "#d3d3d3"
   },
   {
     "name": "LIGHTPINK",
-    "code": "#ffb6c1"
+    "definition": "#ffb6c1"
   },
   {
     "name": "LIGHTYELLOW",
-    "code": "#ffffe0"
+    "definition": "#ffffe0"
   },
   {
     "name": "LIME",
-    "code": "#00ff00"
+    "definition": "#00ff00"
   },
   {
     "name": "LIMEGREEN",
-    "code": "#32cd32"
+    "definition": "#32cd32"
   },
   {
     "name": "MAGENTA",
-    "code": "#ff00ff"
+    "definition": "#ff00ff"
   },
   {
     "name": "MAROON",
-    "code": "#800000"
+    "definition": "#800000"
   },
   {
     "name": "MEDIUMBLUE",
-    "code": "#0000cd"
+    "definition": "#0000cd"
   },
   {
     "name": "MIDNIGHTBLUE",
-    "code": "#191970"
+    "definition": "#191970"
   },
   {
     "name": "MINTCREAM",
-    "code": "#f5fffa"
+    "definition": "#f5fffa"
   },
   {
     "name": "MISTYROSE",
-    "code": "#ffe4e1"
+    "definition": "#ffe4e1"
   },
   {
     "name": "MOCCASIN",
-    "code": "#ffe4b5"
+    "definition": "#ffe4b5"
   },
   {
     "name": "NAVY",
-    "code": "#000080"
+    "definition": "#000080"
   },
   {
     "name": "OLDLACE",
-    "code": "#fdf5e6"
+    "definition": "#fdf5e6"
   },
   {
     "name": "OLIVE",
-    "code": "#808000"
+    "definition": "#808000"
   },
   {
     "name": "OLIVEDRAB",
-    "code": "#6b8e23"
+    "definition": "#6b8e23"
   },
   {
     "name": "ORANGE",
-    "code": "#ffa500"
+    "definition": "#ffa500"
   },
   {
     "name": "ORANGERED",
-    "code": "#ff4500"
+    "definition": "#ff4500"
   },
   {
     "name": "ORCHID",
-    "code": "#da70d6"
+    "definition": "#da70d6"
   },
   {
     "name": "PAPAYAWHIP",
-    "code": "#ffefd5"
+    "definition": "#ffefd5"
   },
   {
     "name": "PEACHPUFF",
-    "code": "#ffdab9"
+    "definition": "#ffdab9"
   },
   {
     "name": "PERU",
-    "code": "#cd853f"
+    "definition": "#cd853f"
   },
   {
     "name": "PINK",
-    "code": "#ffc0cb"
+    "definition": "#ffc0cb"
   },
   {
     "name": "PLUM",
-    "code": "#dda0dd"
+    "definition": "#dda0dd"
   },
   {
     "name": "POWDERBLUE",
-    "code": "#b0e0e6"
+    "definition": "#b0e0e6"
   },
   {
     "name": "PURPLE",
-    "code": "#800080"
+    "definition": "#800080"
   },
   {
     "name": "RED",
-    "code": "#ff0000"
+    "definition": "#ff0000"
   },
   {
     "name": "ROSYBROWN",
-    "code": "#bc8f8f"
+    "definition": "#bc8f8f"
   },
   {
     "name": "ROYALBLUE",
-    "code": "#4169e1"
+    "definition": "#4169e1"
   },
   {
     "name": "SADDLEBROWN",
-    "code": "#8b4513"
+    "definition": "#8b4513"
   },
   {
     "name": "SALMON",
-    "code": "#fa8072"
+    "definition": "#fa8072"
   },
   {
     "name": "SANDYBROWN",
-    "code": "#f4a460"
+    "definition": "#f4a460"
   },
   {
     "name": "SEAGREEN",
-    "code": "#2e8b57"
+    "definition": "#2e8b57"
   },
   {
     "name": "SEASHELL",
-    "code": "#fff5ee"
+    "definition": "#fff5ee"
   },
   {
     "name": "SIENNA",
-    "code": "#a0522d"
+    "definition": "#a0522d"
   },
   {
     "name": "SILVER",
-    "code": "#c0c0c0"
+    "definition": "#c0c0c0"
   },
   {
     "name": "SKYBLUE",
-    "code": "#87ceeb"
+    "definition": "#87ceeb"
   },
   {
     "name": "SLATEBLUE",
-    "code": "#6a5acd"
+    "definition": "#6a5acd"
   },
   {
     "name": "SLATEGRAY",
-    "code": "#708090"
+    "definition": "#708090"
   },
   {
     "name": "SLATEGREY",
-    "code": "#708090"
+    "definition": "#708090"
   },
   {
     "name": "SNOW",
-    "code": "#fffafa"
+    "definition": "#fffafa"
   },
   {
     "name": "SPRINGGREEN",
-    "code": "#00ff7f"
+    "definition": "#00ff7f"
   },
   {
     "name": "STEELBLUE",
-    "code": "#4682b4"
+    "definition": "#4682b4"
   },
   {
     "name": "TAN",
-    "code": "#d2b48c"
+    "definition": "#d2b48c"
   },
   {
     "name": "TEAL",
-    "code": "#008080"
+    "definition": "#008080"
   },
   {
     "name": "THISTLE",
-    "code": "#d8bfd8"
+    "definition": "#d8bfd8"
   },
   {
     "name": "TOMATO",
-    "code": "#ff6347"
+    "definition": "#ff6347"
   },
   {
     "name": "TURQUOISE",
-    "code": "#40e0d0"
+    "definition": "#40e0d0"
   },
   {
     "name": "VIOLET",
-    "code": "#ee82ee"
+    "definition": "#ee82ee"
   },
   {
     "name": "WHEAT",
-    "code": "#f5deb3"
+    "definition": "#f5deb3"
   },
   {
     "name": "WHITE",
-    "code": "#ffffff"
+    "definition": "#ffffff"
   },
   {
     "name": "WHITESMOKE",
-    "code": "#f5f5f5"
+    "definition": "#f5f5f5"
   },
   {
     "name": "YELLOW",
-    "code": "#ffff00"
+    "definition": "#ffff00"
   },
   {
     "name": "YELLOWGREEN",
-    "code": "#9acd32"
+    "definition": "#9acd32"
   }
 ];
 
