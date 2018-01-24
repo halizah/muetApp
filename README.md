@@ -6,8 +6,8 @@ Mobile Hybrid Application
 
 To configure the project in your machine, make sure install:
 1) Nodejs (currently used V3.10.10)
-2) Cordova (v7.0.1)
-3) Ionic (v3.19.1)
+2) Cordova (v7.0.1)  npm -g install cordova
+3) Ionic (v3.19.1)  npm -g install ionic
 4) Sdk manager (Android API 24)
 
 Once you have installed the above service,
