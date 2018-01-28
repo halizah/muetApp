@@ -59,15 +59,33 @@ function ($scope, $stateParams,$rootScope,Pubnub) {
     $rootScope.initialized = true;
   }
 	$scope.msgChannel   = 'MySpeech';
-	$scope.sayIt = function(txtboxWord)
+	
+	var msgCallback = function(payload) {
+    $scope.$apply(function() {
+      $scope.messages.push(payload);
+    });
+    $scope.sayIt(payload.data);
+  };
+	
+	$scope.publish = function(txtboxWord)
 	{
 	 Pubnub.publish({
       channel: $scope.msgChannel,
       message: {data:txtboxWord}
 	  });
-		
+	 $scope.sayIt(txtboxWord);
 	};
-	//Pubnub.subscribe({ channel: [$scope.msgChannel, $scope.prsChannel], message: msgCallback });
+	Pubnub.subscribe({ channel: [$scope.msgChannel, $scope.prsChannel], message: msgCallback });
+	
+	$scope.sayIt = function (theText) {
+		TTS.speak(theText, function () {
+        //alert('success');
+		}, function (reason) {
+        alert("Sorry your phone did not support this feature!" + reason);
+		});
+   
+  };
+  
 })
    
 .controller('menuCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
