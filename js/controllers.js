@@ -46,8 +46,9 @@ function ($scope, $stateParams,$rootScope,Pubnub) {
 	//alert("Data from mock " + objResult.definition);
 	$scope.txtboxWord = txtSearch;
 	$scope.txtboxMeaning = objResult.definition;
+	$scope.txtboxMeaningBM = objResult.definitionBM;
 	$scope.txtAreaSentence = objResult.sentenceEng;
-	
+	$scope.txtAreaSentenceBM = objResult.sentenceBM;
 	//var googleTTS = require('google-tts-api');
 	if (!$rootScope.initialized) {
     Pubnub.init({
@@ -61,7 +62,7 @@ function ($scope, $stateParams,$rootScope,Pubnub) {
 	$scope.sayIt = function(txtboxWord)
 	{
 	 Pubnub.publish({
-      //channel: $scope.msgChannel,
+      channel: $scope.msgChannel,
       message: {data:txtboxWord}
 	  });
 		
