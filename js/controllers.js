@@ -1,4 +1,4 @@
-angular.module('app.controllers', ['ionic', 'ngCordova','autoCompleteModule'])
+angular.module('app.controllers', ['ionic','sw2.ionic.input-clearable', 'ngCordova','autoCompleteModule','pubnub.angular.service'])
   
 .controller('muetDictionaryCtrl',  // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
@@ -7,6 +7,9 @@ function ($scope, $stateParams,$state,$ionicPlatform,$rootScope) {
 //$scope.searchString = null;
 $scope.autoCompleteOptions = {
             minimumChars: 1,
+			itemSelected: function (items) {
+                fnGoTo(items.item);
+            },
             data: function (searchText) {
                 searchText = searchText.toUpperCase();
 
@@ -19,18 +22,22 @@ $scope.autoCompleteOptions = {
         }
  
  $scope.fnSearch = function(searchString){
-	$rootScope.txtSearch = searchString;
+	fnGoTo(searchString);
+ };
+ 
+ function fnGoTo(searchString)
+ {
+	 $rootScope.txtSearch = searchString;
 	
 	//alert("data to send: "+$rootScope.txtSearch);
 	$state.go('menu.wordMeaning');
- };
-
+ }
 })
    
 .controller('wordMeaningCtrl',  // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams,$rootScope) {
+function ($scope, $stateParams,$rootScope,Pubnub) {
 	
 	var txtSearch = $rootScope.txtSearch;
 	var objResult = _.find(MOCK_DATA, function (data) {
@@ -40,6 +47,26 @@ function ($scope, $stateParams,$rootScope) {
 	$scope.txtboxWord = txtSearch;
 	$scope.txtboxMeaning = objResult.definition;
 	$scope.txtAreaSentence = objResult.sentenceEng;
+	
+	//var googleTTS = require('google-tts-api');
+	if (!$rootScope.initialized) {
+    Pubnub.init({
+      publish_key: 'pub-c-a6bb5677-190c-476c-876c-31415bbc492d',
+      subscribe_key: 'sub-c-eaafb826-0399-11e8-b9cf-5e11f2e66252',
+      ssl:true
+    });
+    $rootScope.initialized = true;
+  }
+	$scope.msgChannel   = 'MySpeech';
+	$scope.sayIt = function(txtboxWord)
+	{
+	 Pubnub.publish({
+      channel: $scope.msgChannel,
+      message: {data:txtboxWord}
+	  });
+		
+	};
+	//Pubnub.subscribe({ channel: [$scope.msgChannel, $scope.prsChannel], message: msgCallback });
 })
    
 .controller('menuCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller

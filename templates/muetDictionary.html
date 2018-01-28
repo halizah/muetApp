@@ -1,11 +1,9 @@
 <ion-view title="Muet Dictionary" id="page1" style="background-color:#E4EEF6;">
   <ion-content padding="true" class="has-header">
     <form id="muetDictionary-form1" class="list">
-      <label class="item item-input" id="muetDictionary-input3" name="txtBoxSearch">
-	  
-        <input type="text" ng-model="searchString" auto-complete="autoCompleteOptions" placeholder="Search Your Word Here">
-		
-      </label>
+      <div class="item item-input"  >  
+        <input type="text"  ng-model="searchString"  auto-complete="autoCompleteOptions" autocomplete="off" placeholder="Search Your Word Here"  />	
+      </div>
 	  <button id="home-button7" class="button button-positive button-block icon ion-android-search" ng-click="fnSearch(searchString)">Search</button>
     </form>
 	
