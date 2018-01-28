@@ -13,11 +13,11 @@ $scope.autoCompleteOptions = {
             data: function (searchText) {
                 searchText = searchText.toUpperCase();
 
-                var colors = _.filter(MOCK_DATA, function (colorss) {
-                    return colorss.name.startsWith(searchText);
+                var objResult = _.filter(MOCK_DATA, function (dataObj) {
+                    return dataObj.word.startsWith(searchText);
                 });
 
-                return _.pluck(colors, 'name');
+                return _.pluck(objResult, 'word');
             }
         }
  
@@ -41,7 +41,7 @@ function ($scope, $stateParams,$rootScope,Pubnub) {
 	
 	var txtSearch = $rootScope.txtSearch;
 	var objResult = _.find(MOCK_DATA, function (data) {
-                    return data.name === txtSearch;
+                    return data.word === txtSearch;
                 });
 	//alert("Data from mock " + objResult.definition);
 	$scope.txtboxWord = txtSearch;
@@ -61,7 +61,7 @@ function ($scope, $stateParams,$rootScope,Pubnub) {
 	$scope.sayIt = function(txtboxWord)
 	{
 	 Pubnub.publish({
-      channel: $scope.msgChannel,
+      //channel: $scope.msgChannel,
       message: {data:txtboxWord}
 	  });
 		
