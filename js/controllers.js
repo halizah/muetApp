@@ -58,27 +58,30 @@ function ($scope, $stateParams,$rootScope,Pubnub) {
     });
     $rootScope.initialized = true;
   }
-	$scope.msgChannel   = 'MySpeech';
-	
+	/*$scope.msgChannel   = 'MySpeech';
 	var msgCallback = function(payload) {
     $scope.$apply(function() {
       $scope.messages.push(payload);
     });
     $scope.sayIt(payload.data);
-  };
+  }; */
 	
 	$scope.publish = function(txtboxWord)
 	{
-	 Pubnub.publish({
+	 /*Pubnub.publish({
       channel: $scope.msgChannel,
       message: {data:txtboxWord}
-	  });
+	  });  */
 	 $scope.sayIt(txtboxWord);
 	};
-	Pubnub.subscribe({ channel: [$scope.msgChannel, $scope.prsChannel], message: msgCallback });
+	//Pubnub.subscribe({ channel: [$scope.msgChannel, $scope.prsChannel], message: msgCallback });
 	
 	$scope.sayIt = function (theText) {
-		TTS.speak(theText, function () {
+		TTS.speak({
+            text: theText,
+            locale: 'en-GB',
+            rate: 0.75
+        }, function () {
         //alert('success');
 		}, function (reason) {
         alert("Sorry your phone did not support this feature!" + reason);
