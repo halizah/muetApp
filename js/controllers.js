@@ -1,4 +1,4 @@
-angular.module('app.controllers', ['ionic','sw2.ionic.input-clearable', 'ngCordova','autoCompleteModule','pubnub.angular.service'])
+angular.module('app.controllers', ['ionic','sw2.ionic.input-clearable', 'ngCordova','autoCompleteModule'])
   
 .controller('muetDictionaryCtrl',  // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
@@ -37,7 +37,7 @@ $scope.autoCompleteOptions = {
 .controller('wordMeaningCtrl',  // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams,$rootScope,Pubnub) {
+function ($scope, $stateParams,$rootScope) {
 	
 	var txtSearch = $rootScope.txtSearch;
 	var objResult = _.find(MOCK_DATA, function (data) {
@@ -51,11 +51,7 @@ function ($scope, $stateParams,$rootScope,Pubnub) {
 	$scope.txtAreaSentenceBM = objResult.sentenceBM;
 	//var googleTTS = require('google-tts-api');
 	if (!$rootScope.initialized) {
-    Pubnub.init({
-      publish_key: 'pub-c-a6bb5677-190c-476c-876c-31415bbc492d',
-      subscribe_key: 'sub-c-eaafb826-0399-11e8-b9cf-5e11f2e66252',
-      ssl:true
-    });
+    
     $rootScope.initialized = true;
   }
 	/*$scope.msgChannel   = 'MySpeech';
