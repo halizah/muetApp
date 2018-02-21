@@ -11,7 +11,7 @@ $scope.autoCompleteOptions = {
                 fnGoTo(items.item);
             },
             data: function (searchText) {
-                searchText = searchText.toUpperCase();
+                searchText = searchText.toLowerCase();
 
                 var objResult = _.filter(MOCK_DATA, function (dataObj) {
                     return dataObj.word.startsWith(searchText);
